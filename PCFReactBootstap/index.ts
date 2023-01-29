@@ -1,7 +1,7 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import BasicForm from "./BoostrapCompnents/BasicForm";
+import BasicForm from "./BoostrapComponents/BasicForm";
 
 
 export class PCFReactBootstap implements ComponentFramework.StandardControl<IInputs, IOutputs> {
