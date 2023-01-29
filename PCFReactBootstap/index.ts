@@ -1,7 +1,12 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
+import BasicForm from "./BoostrapCompnents/BasicForm";
+
 
 export class PCFReactBootstap implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
+    private _dvContainer: HTMLDivElement;
     /**
      * Empty constructor.
      */
@@ -21,6 +26,7 @@ export class PCFReactBootstap implements ComponentFramework.StandardControl<IInp
     public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container:HTMLDivElement): void
     {
         // Add control initialization code
+        this._dvContainer = container;
     }
 
 
@@ -31,6 +37,10 @@ export class PCFReactBootstap implements ComponentFramework.StandardControl<IInp
     public updateView(context: ComponentFramework.Context<IInputs>): void
     {
         // Add code to update control view
+        ReactDom.render(
+            React.createElement(BasicForm, {}),
+            this._dvContainer
+        );
     }
 
     /**
